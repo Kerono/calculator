@@ -64,7 +64,10 @@ export default function App() {
 		})
 	}
 	function countSum(){
-		setSum(eval(expression.join('')) || 0)
+		try {setSum(eval(expression.join('')) || 0)}
+		catch(error) {
+			console.log("is the expression written correctly?")
+		}
 	}
 	function changeTheme(){
 		setTheme(prevValue=> {
